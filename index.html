@@ -1,345 +1,431 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="vi">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Bùi Lê Thảo Nguyên - Portfolio</title>
+        <link rel="stylesheet" href="styles.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+            rel="stylesheet"
+        />
+        <!-- Thêm font script tương tự Signatures -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Great+Vibes&family=Pinyon+Script&display=swap"
+            rel="stylesheet"
+        />
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bùi Lê Thảo Nguyên - Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
-        rel="stylesheet">
-    <!-- Thêm font script tương tự Signatures -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Great+Vibes&family=Pinyon+Script&display=swap"
-        rel="stylesheet">
-</head>
+    <body>
+        <div class="cursor"></div>
+        <header>
+            <div class="container">
+                <nav>
+                    <div class="logo">Bùi Lê Thảo Nguyên</div>
+                    <ul class="nav-links">
+                        <li><a href="#about">Giới thiệu</a></li>
+                        <li><a href="#education">Học vấn</a></li>
+                        <li><a href="#experience">Kinh nghiệm</a></li>
+                        <li><a href="#portfolio">Tác phẩm</a></li>
+                        <li><a href="#skills">Kĩ năng</a></li>
+                        <li><a href="#contact">Liên hệ</a></li>
+                    </ul>
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </nav>
+            </div>
+        </header>
 
-<body>
-    <div class="cursor"></div>
-    <header>
-        <div class="container">
-            <nav>
-                <div class="logo">Bùi Lê Thảo Nguyên</div>
-                <ul class="nav-links">
-                    <li><a href="#about">Giới thiệu</a></li>
-                    <li><a href="#education">Học vấn</a></li>
-                    <li><a href="#experience">Kinh nghiệm</a></li>
-                    <li><a href="#portfolio">Tác phẩm</a></li>
-                    <li><a href="#skills">Kĩ năng</a></li>
-                    <li><a href="#contact">Liên hệ</a></li>
-                </ul>
-                <div class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="reveal-text elegant-script">
+                        Bùi Lê Thảo Nguyên
+                    </h1>
+                    <p class="subtitle reveal-text">
+                        Nhiếp ảnh,Truyền thông & Tổ chức sự kiện
+                    </p>
                 </div>
-            </nav>
-        </div>
-    </header>
-
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="reveal-text elegant-script">Bùi Lê Thảo Nguyên</h1>
-                <p class="subtitle reveal-text">Nhiếp ảnh,Truyền thông & Tổ chức sự kiện</p>
-
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="about" class="about">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="elegant-script">Giới thiệu</h2>
-                <div class="line"></div>
-            </div>
-            <div class="about-content">
-                <div class="about-image">
-                    <div class="image-container">
-
-                        <img src="./asset/avt.jpg" alt="Bùi Lê Thảo Nguyên" class="profile-image">
+        <section id="about" class="about">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="elegant-script">Giới thiệu</h2>
+                    <div class="line"></div>
+                </div>
+                <div class="about-content">
+                    <div class="about-image">
+                        <div class="image-container">
+                            <img
+                                src="./asset/avt.jpg"
+                                alt="Bùi Lê Thảo Nguyên"
+                                class="profile-image"
+                            />
+                        </div>
+                    </div>
+                    <div class="about-text">
+                        <div class="personality">
+                            <div class="personality-item">
+                                <h3 class="elegant-script">Ưu điểm</h3>
+                                <ul>
+                                    <li>
+                                        Có kinh nghiệm tham gia các hoạt động
+                                        truyền thông
+                                    </li>
+                                    <li>Năng động, dễ hòa nhập, nhanh nhẹn</li>
+                                    <li>Có đam mê với ngành nghề Marketing</li>
+                                </ul>
+                            </div>
+                            <div class="personality-item">
+                                <h3 class="elegant-script">Kinh nghiệm đi làm</h3>
+                                <ul>
+                                    <li>Có kinh nghiệm <span class="highlight">TTS</span> bộ phận <span class="highlight">R&D</span> phòng <span class="highlight">Marketing</span> tại Công ty cổ phần sản xuất, thương mại và dịch vụ Bảo Long</li>
+                                    <li><span class="highlight">TTS Content Creator</span> tại 35milimoments</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="about-text">
+            </div>
+        </section>
 
-                    <div class="personality">
-                        <div class="personality-item">
-                            <h3 class="elegant-script">Ưu điểm</h3>
-                            <ul>
-                                <li>Có kinh nghiệm tham gia các hoạt động truyền thông</li>
-                                <li>Năng động, dễ hòa nhập, nhanh nhẹn</li>
-                                <li>Có đam mê với ngành nghề Marketing</li>
+        <section id="experience" class="experience">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="elegant-script">Kinh nghiệm</h2>
+                    <div class="line"></div>
+                </div>
+                <div class="experience-tabs">
+                    <div class="tab-buttons">
+                        <button class="tab-btn active" data-tab="photography">
+                            Lĩnh vực quay chụp
+                        </button>
+                        <button class="tab-btn" data-tab="events">
+                            Lĩnh vực tổ chức sự kiện
+                        </button>
+                    </div>
+                    <!-- ...existing code... -->
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="photography">
+                            <h3>Một số hoạt động tiêu biểu</h3>
+                            <ul class="experience-list">
+                                <li>
+                                    Chủ tịch CLB Điện ảnh THPT Chuyên Vĩnh Phúc
+                                </li>
+                                <li>
+                                    Ban Chuyên Môn CLB Nhiếp ảnh sinh viên (SPC)
+                                </li>
+                                <li>
+                                    Thành viên ban Kỹ Thuật sự kiện "1 ngày làm
+                                    sinh viên Truyền thông quốc tế - ICID"
+                                </li>
+                                <li>
+                                    CTV Kỹ Thuật Đề án tốt nghiệp thời trang
+                                    nhóm sinh viên Học viện thời trang London
+                                    (LCDF)
+                                </li>
+                                <li>
+                                    CTV bảo trợ hình ảnh sự kiện hòa nhạc "The
+                                    Omega Vol 4"
+                                </li>
+                            </ul>
+                            <div class="portfolio-buttons">
+                                <a href="#portfolio" class="portfolio-btn"
+                                    >Xem tác phẩm của tôi</a
+                                >
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="events">
+                            <h3>Một số hoạt động tiêu biểu</h3>
+                            <ul class="experience-list">
+                                <li>
+                                    Trưởng BTC sự kiện "Ngày hội hướng nghiệp"
+                                    trường THPT Chuyên Vĩnh Phúc
+                                </li>
+                                <li>
+                                    CTV ban Sự Kiện chuỗi Workshop "Thấu tâm"
+                                </li>
+                                <li>
+                                    Thành viên ban Hậu cần sự kiện Tiếp sức mùa
+                                    thi THPT Chuyên Vĩnh Phúc
+                                </li>
+                            </ul>
+
+                            <h3 class="mt-30">Một số hoạt động khác</h3>
+                            <ul class="event-links-list">
+                                <li>
+                                    <a
+                                        href="https://www.facebook.com/share/v/1CCLwUpUqm/?mibextid=wwXIfr"
+                                        class="event-link"
+                                        target="_blank"
+                                    >
+                                        <i class="fab fa-facebook"></i>
+                                        MÓN QUÀ ĐẶC BIỆT DÀNH TẶNG K52 FICC-ERS
+                                        WANNABE
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://www.facebook.com/watch/?v=1297396887588105"
+                                        class="event-link"
+                                        target="_blank"
+                                    >
+                                        <i class="fab fa-facebook"></i>
+                                        ĐỪNG Ở LẠI TRƯỜNG LÚC NỬA ĐÊM
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://www.facebook.com/story.php?story_fbid=999567512185475&id=100063967058757&mibextid=wwXIfr&rdid=3OBxzw8V8tWe0Xkt"
+                                        class="event-link"
+                                        target="_blank"
+                                    >
+                                        <i class="fab fa-facebook"></i>
+                                        Ω 𝐓𝐇𝐄 𝐎𝐌𝐄𝐆𝐀 Ω 𝐕𝐎𝐋 𝟒 ✧˚NHÌN LẠI MỘT GIẤC
+                                        MƠ - RECAP VÒNG TEAMWORK
+                                    </a>
+                                </li>
                             </ul>
                         </div>
-                        <div class="personality-item">
-                            <h3 class="elegant-script">Nhược điểm</h3>
-                            <ul>
-                                <li>Chưa có phương tiện đi lại</li>
-                                <li>Chưa có kinh nghiệm về việc làm</li>
-                            </ul>
+                    </div>
+                    <!-- ...existing code... -->
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="education">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="elegant-script">Học vấn</h2>
+                    <div class="line"></div>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>THPT Chuyên Vĩnh Phúc</h3>
+                            <p class="timeline-subtitle">Chuyên Văn</p>
+                            <p class="timeline-date">2021-2024</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>Học viện Ngoại Giao</h3>
+                            <p class="timeline-subtitle">
+                                Khoa Truyền thông và Văn hóa đối ngoại
+                            </p>
+                            <p class="timeline-date">2024-2028</p>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="experience" class="experience">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="elegant-script">Kinh nghiệm</h2>
-                <div class="line"></div>
-            </div>
-            <div class="experience-tabs">
-                <div class="tab-buttons">
-                    <button class="tab-btn active" data-tab="photography">Lĩnh vực quay chụp</button>
-                    <button class="tab-btn" data-tab="events">Lĩnh vực tổ chức sự kiện</button>
+        <section id="portfolio" class="portfolio">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="elegant-script">Tác phẩm</h2>
+                    <div class="line"></div>
                 </div>
-                <!-- ...existing code... -->
-                <div class="tab-content">
-                    <div class="tab-pane active" id="photography">
-                        <h3>Một số hoạt động tiêu biểu</h3>
-                        <ul class="experience-list">
-                            <li>Chủ tịch CLB Điện ảnh THPT Chuyên Vĩnh Phúc</li>
-                            <li>Ban Chuyên Môn CLB Nhiếp ảnh sinh viên (SPC)</li>
-                            <li>Thành viên ban Kỹ Thuật sự kiện "1 ngày làm sinh viên Truyền thông quốc tế - ICID"</li>
-                            <li>CTV Kỹ Thuật Đề án tốt nghiệp thời trang nhóm sinh viên Học viện thời trang London
-                                (LCDF)</li>
-                            <li>CTV bảo trợ hình ảnh sự kiện hòa nhạc "The Omega Vol 4"</li>
-                        </ul>
-                        <div class="portfolio-buttons">
-                            <a href="#portfolio" class="portfolio-btn">Xem tác phẩm của tôi</a>
+
+                <div class="portfolio-filter">
+                    <button class="filter-btn active" data-filter="all">
+                        Tất cả
+                    </button>
+                    <button class="filter-btn" data-filter="trung-thu">
+                        Trung thu
+                    </button>
+                    <button class="filter-btn" data-filter="non-la">
+                        Nón lá
+                    </button>
+                    <button class="filter-btn" data-filter="hoc-duong">
+                        Học đường
+                    </button>
+                    <button class="filter-btn" data-filter="nhom-nhac">
+                        Nhóm nhạc giả lập
+                    </button>
+                    <button class="filter-btn" data-filter="ao-dai">
+                        Áo dài mùa thu
+                    </button>
+                    <button class="filter-btn" data-filter="ngoai-giao">
+                        Đọng lại ngoại giao
+                    </button>
+                    <button class="filter-btn" data-filter="nang-tho">
+                        Nàng thơ
+                    </button>
+                </div>
+
+                <div class="carousel-container">
+                    <button class="carousel-arrow carousel-prev">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+
+                    <div class="carousel-wrapper">
+                        <div class="carousel-track"></div>
+                    </div>
+
+                    <button class="carousel-arrow carousel-next">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+
+                <div id="lightbox" class="lightbox">
+                    <span class="lightbox-close">&times;</span>
+                    <img class="lightbox-content" id="lightbox-img" />
+                    <div class="lightbox-caption"></div>
+                    <a class="lightbox-prev">&#10094;</a>
+                    <a class="lightbox-next">&#10095;</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="skills">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="elegant-script">Kĩ năng</h2>
+                    <div class="line"></div>
+                </div>
+                <div class="skills-content">
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <i class="fas fa-desktop"></i>
+                        </div>
+                        <h3>Kĩ năng tin học văn phòng</h3>
+                        <p>Đã đạt được chứng chỉ tin học văn phòng (MOS)</p>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <i class="fas fa-language"></i>
+                        </div>
+                        <h3>Kĩ năng ngoại ngữ</h3>
+                        <p>Thành thạo tiếng Anh (IELTS 7.0)</p>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <i class="fas fa-pencil-alt"></i>
+                        </div>
+                        <h3>Kĩ năng xây dựng content</h3>
+                        <p>
+                            Có kinh nghiệm tham gia sản xuất, lên ý tưởng và Art
+                            Director cho các ấn phẩm CLB
+                        </p>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h3>Kĩ năng thiết kế</h3>
+                        <p>Sử dụng thành thạo Canva, Adobe Illustrator</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="elegant-script">Thông tin liên hệ</h2>
+                    <div class="line"></div>
+                </div>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h3>Điện thoại</h3>
+                                <p>0898440814</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h3>Email</h3>
+                                <p>builethaonguyen26122006@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h3>Địa chỉ</h3>
+                                <p>19/4 ngõ 121, Chùa Láng, Đống Đa</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="tab-pane" id="events">
-                        <h3>Một số hoạt động tiêu biểu</h3>
-                        <ul class="experience-list">
-                            <li>Trưởng BTC sự kiện "Ngày hội hướng nghiệp" trường THPT Chuyên Vĩnh Phúc</li>
-                            <li>CTV ban Sự Kiện chuỗi Workshop "Thấu tâm"</li>
-                            <li>Thành viên ban Hậu cần sự kiện Tiếp sức mùa thi THPT Chuyên Vĩnh Phúc</li>
-                        </ul>
-
-                        <h3 class="mt-30">Một số hoạt động khác</h3>
-                        <ul class="event-links-list">
-                            <li>
-                                <a href="https://www.facebook.com/share/v/1CCLwUpUqm/?mibextid=wwXIfr"
-                                    class="event-link" target="_blank">
-                                    <i class="fab fa-facebook"></i>
-                                    MÓN QUÀ ĐẶC BIỆT DÀNH TẶNG K52 FICC-ERS WANNABE
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.facebook.com/watch/?v=1297396887588105" class="event-link"
-                                    target="_blank">
-                                    <i class="fab fa-facebook"></i>
-                                    ĐỪNG Ở LẠI TRƯỜNG LÚC NỬA ĐÊM
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.facebook.com/story.php?story_fbid=999567512185475&id=100063967058757&mibextid=wwXIfr&rdid=3OBxzw8V8tWe0Xkt"
-                                    class="event-link" target="_blank">
-                                    <i class="fab fa-facebook"></i>
-                                    Ω 𝐓𝐇𝐄 𝐎𝐌𝐄𝐆𝐀 Ω 𝐕𝐎𝐋 𝟒 ✧˚NHÌN LẠI MỘT GIẤC MƠ - RECAP VÒNG TEAMWORK
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- ...existing code... -->
-            </div>
-        </div>
-    </section>
-
-    <section id="education" class="education">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="elegant-script">Học vấn</h2>
-                <div class="line"></div>
-            </div>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3>THPT Chuyên Vĩnh Phúc</h3>
-                        <p class="timeline-subtitle">Chuyên Văn</p>
-                        <p class="timeline-date">2021-2024</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3>Học viện Ngoại Giao</h3>
-                        <p class="timeline-subtitle">Khoa Truyền thông và Văn hóa đối ngoại</p>
-                        <p class="timeline-date">2024-2028</p>
+                    <div class="contact-form">
+                        <h3>Gửi tin nhắn</h3>
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <input
+                                    type="text"
+                                    id="name"
+                                    placeholder="Họ và tên"
+                                    required
+                                />
+                            </div>
+                            <div class="form-group">
+                                <input
+                                    type="email"
+                                    id="email"
+                                    placeholder="Email"
+                                    required
+                                />
+                            </div>
+                            <div class="form-group">
+                                <textarea
+                                    id="message"
+                                    placeholder="Tin nhắn"
+                                    required
+                                ></textarea>
+                            </div>
+                            <button type="submit" class="submit-btn">
+                                Gửi tin nhắn
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-
-
-    <section id="portfolio" class="portfolio">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="elegant-script">Tác phẩm</h2>
-                <div class="line"></div>
-            </div>
-
-            <div class="portfolio-filter">
-                <button class="filter-btn active" data-filter="all">Tất cả</button>
-                <button class="filter-btn" data-filter="trung-thu">Trung thu</button>
-                <button class="filter-btn" data-filter="non-la">Nón lá</button>
-                <button class="filter-btn" data-filter="hoc-duong">Học đường</button>
-                <button class="filter-btn" data-filter="nhom-nhac">Nhóm nhạc giả lập</button>
-                <button class="filter-btn" data-filter="ao-dai">Áo dài mùa thu</button>
-                <button class="filter-btn" data-filter="ngoai-giao">Đọng lại ngoại giao</button>
-                <button class="filter-btn" data-filter="valentine">Phim Valentine</button>
-                <button class="filter-btn" data-filter="nang-tho">Nàng thơ</button>
-            </div>
-
-            <div class="carousel-container">
-                <button class="carousel-arrow carousel-prev">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-
-                <div class="carousel-wrapper">
-                    <div class="carousel-track">
-
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-logo">Bùi Lê Thảo Nguyên</div>
+                    <div class="social-links">
+                        <a href="#" class="social-link"
+                            ><i class="fab fa-facebook-f"></i
+                        ></a>
+                        <a href="#" class="social-link"
+                            ><i class="fab fa-instagram"></i
+                        ></a>
+                        <a href="#" class="social-link"
+                            ><i class="fab fa-linkedin-in"></i
+                        ></a>
                     </div>
                 </div>
-
-                <button class="carousel-arrow carousel-next">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
-            </div>
-
-
-            <div id="lightbox" class="lightbox">
-                <span class="lightbox-close">&times;</span>
-                <img class="lightbox-content" id="lightbox-img">
-                <div class="lightbox-caption"></div>
-                <a class="lightbox-prev">&#10094;</a>
-                <a class="lightbox-next">&#10095;</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="skills" class="skills">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="elegant-script">Kĩ năng</h2>
-                <div class="line"></div>
-            </div>
-            <div class="skills-content">
-                <div class="skill-item">
-                    <div class="skill-icon">
-                        <i class="fas fa-desktop"></i>
-                    </div>
-                    <h3>Kĩ năng tin học văn phòng</h3>
-                    <p>Đã đạt được chứng chỉ tin học văn phòng (MOS)</p>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-icon">
-                        <i class="fas fa-language"></i>
-                    </div>
-                    <h3>Kĩ năng ngoại ngữ</h3>
-                    <p>Thành thạo tiếng Anh (IELTS 7.0)</p>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-icon">
-                        <i class="fas fa-pencil-alt"></i>
-                    </div>
-                    <h3>Kĩ năng xây dựng content</h3>
-                    <p>Có kinh nghiệm tham gia sản xuất, lên ý tưởng và Art Director cho các ấn phẩm CLB</p>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-icon">
-                        <i class="fas fa-palette"></i>
-                    </div>
-                    <h3>Kĩ năng thiết kế</h3>
-                    <p>Sử dụng thành thạo Canva, Adobe Illustrator</p>
+                <div class="copyright">
+                    <p>&copy; 2024 weinguyen. All rights reserved.</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </footer>
 
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="elegant-script">Thông tin liên hệ</h2>
-                <div class="line"></div>
-            </div>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <div class="contact-text">
-                            <h3>Điện thoại</h3>
-                            <p>0898440814</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="contact-text">
-                            <h3>Email</h3>
-                            <p>builethaonguyen26122006@gmail.com</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div class="contact-text">
-                            <h3>Địa chỉ</h3>
-                            <p>19/4 ngõ 121, Chùa Láng, Đống Đa</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="contact-form">
-                    <h3>Gửi tin nhắn</h3>
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <input type="text" id="name" placeholder="Họ và tên" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" id="email" placeholder="Email" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea id="message" placeholder="Tin nhắn" required></textarea>
-                        </div>
-                        <button type="submit" class="submit-btn">Gửi tin nhắn</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">Bùi Lê Thảo Nguyên</div>
-                <div class="social-links">
-                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                </div>
-            </div>
-            <div class="copyright">
-                <p>&copy; 2024 weinguyen. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-
+        <script src="script.js"></script>
+    </body>
 </html>

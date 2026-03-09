@@ -12,6 +12,11 @@
     --transition: all 0.3s ease;
 }
 
+.highlight {
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
 * {
     margin: 0;
     padding: 0;

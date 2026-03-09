@@ -68,7 +68,6 @@ const portfolioData = [
     { category: 'nhom-nhac', title: 'Nhóm nhạc giả lập', path: './asset/duannhomnhacgialap/', count: 10 },
     { category: 'ao-dai', title: 'Áo dài mùa thu', path: './asset/aodaimuathu/', count: 10 },
     { category: 'ngoai-giao', title: 'Đọng lại ngoại giao', path: './asset/donglaingoaigiao/', count: 14 },
-    { category: 'valentine', title: 'Phim Valentine', path: './asset/nhungbophimnenxemngayvalentin/', count: 4 },
     { category: 'nang-tho', title: 'Nàng thơ', path: './asset/anhnangtho/', count: 7 }
 ];
 
