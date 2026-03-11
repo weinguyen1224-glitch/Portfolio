@@ -64,7 +64,6 @@ tabBtns.forEach(btn => {
 const portfolioData = [
     { category: 'trung-thu', title: 'Trung thu', path: './asset/anhtrungthu/', count: 10 },
     { category: 'non-la', title: 'Nón lá', path: './asset/anhnonla/', count: 10 },
-    { category: 'hoc-duong', title: 'Học đường', path: './asset/nhungnhanvattrongphimhocduong/', count: 4 },
     { category: 'nhom-nhac', title: 'Nhóm nhạc giả lập', path: './asset/duannhomnhacgialap/', count: 10 },
     { category: 'ao-dai', title: 'Áo dài mùa thu', path: './asset/aodaimuathu/', count: 10 },
     { category: 'ngoai-giao', title: 'Đọng lại ngoại giao', path: './asset/donglaingoaigiao/', count: 14 },
