@@ -403,3 +403,178 @@ function replaceWithIframe(thumbnailElement, videoUrl) {
   wrapper.innerHTML = ''; // Clear thumbnail
   wrapper.appendChild(iframe);
 }
+
+// PDF.js modal preview
+window.addEventListener("DOMContentLoaded", () => {
+  const modal = document.getElementById("pdfModal")
+  const canvas = document.getElementById("pdfCanvas")
+  const nativeViewer = document.getElementById("pdfNativeViewer")
+  const openButtons = document.querySelectorAll(".pdf-open-btn")
+
+  if (!modal || !canvas || !openButtons.length) return
+
+  const context = canvas.getContext("2d")
+  const titleElement = document.getElementById("pdfModalTitle")
+  const pageElement = modal.querySelector("[data-pdf-page]")
+  const totalElement = modal.querySelector("[data-pdf-total]")
+  const statusElement = modal.querySelector("[data-pdf-status]")
+  const sourceLink = modal.querySelector("[data-pdf-download]")
+  const prevButton = modal.querySelector("[data-pdf-prev]")
+  const nextButton = modal.querySelector("[data-pdf-next]")
+  const pdfCache = new Map()
+
+  let pdfDocument = null
+  let pageNumber = 1
+  let isRendering = false
+  let nativeMode = false
+
+  const setStatus = (message) => {
+    if (statusElement) statusElement.textContent = message || ""
+  }
+
+  const updateButtons = () => {
+    const totalPages = pdfDocument?.numPages || 1
+    if (pageElement) pageElement.textContent = pageNumber
+    if (totalElement) totalElement.textContent = totalPages
+    if (prevButton) prevButton.disabled = pageNumber <= 1
+    if (nextButton) nextButton.disabled = pageNumber >= totalPages
+  }
+
+  const showNativePreview = (source, message) => {
+    nativeMode = true
+    pdfDocument = null
+    canvas.classList.add("is-hidden")
+    if (nativeViewer) {
+      nativeViewer.classList.add("is-visible")
+      nativeViewer.innerHTML = ""
+
+      if (window.PDFObject) {
+        window.PDFObject.embed(source, nativeViewer, {
+          height: "72vh",
+          pdfOpenParams: { view: "FitH", toolbar: 1, navpanes: 0 },
+        })
+      } else {
+        const object = document.createElement("object")
+        object.data = source
+        object.type = "application/pdf"
+        object.height = "100%"
+        const message = document.createElement("p")
+        message.textContent = "Trình duyệt không mở được preview. "
+        const link = document.createElement("a")
+        link.href = source
+        link.target = "_blank"
+        link.rel = "noopener"
+        link.textContent = "Mở file gốc"
+        message.appendChild(link)
+        object.appendChild(message)
+        nativeViewer.appendChild(object)
+      }
+    }
+    if (prevButton) prevButton.disabled = true
+    if (nextButton) nextButton.disabled = true
+    if (pageElement) pageElement.textContent = "-"
+    if (totalElement) totalElement.textContent = "-"
+    setStatus(message || "Đang dùng PDFObject/native PDF viewer trong modal.")
+  }
+
+  const renderPage = async (number) => {
+    if (!pdfDocument || isRendering || nativeMode) return
+    isRendering = true
+    setStatus("Đang render PDF...")
+
+    try {
+      const page = await pdfDocument.getPage(number)
+      const containerWidth = Math.min(modal.querySelector(".pdf-modal__viewer").clientWidth - 44, 980)
+      const initialViewport = page.getViewport({ scale: 1 })
+      const scale = Math.max(0.8, containerWidth / initialViewport.width)
+      const viewport = page.getViewport({ scale })
+
+      canvas.width = viewport.width
+      canvas.height = viewport.height
+      await page.render({ canvasContext: context, viewport }).promise
+      setStatus("")
+      updateButtons()
+    } catch (error) {
+      showNativePreview(sourceLink.href, "PDF.js không render được file này, chuyển sang PDFObject/native viewer.")
+    } finally {
+      isRendering = false
+    }
+  }
+
+  const openModal = async (source, title) => {
+    modal.classList.add("is-open")
+    modal.setAttribute("aria-hidden", "false")
+    document.body.classList.add("pdf-modal-open")
+    nativeMode = false
+    canvas.classList.remove("is-hidden")
+    if (nativeViewer) {
+      nativeViewer.innerHTML = ""
+      nativeViewer.classList.remove("is-visible")
+    }
+    if (titleElement) titleElement.textContent = title || "Tài liệu"
+    if (sourceLink) sourceLink.href = source
+    setStatus("Đang tải PDF...")
+
+    try {
+      if (window.pdfjsLib) {
+        window.pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js"
+        const loadingTask = pdfCache.get(source) || window.pdfjsLib.getDocument({ url: source, disableStream: false, disableAutoFetch: false }).promise
+        pdfCache.set(source, loadingTask)
+        pdfDocument = await loadingTask
+        pageNumber = 1
+        updateButtons()
+        renderPage(pageNumber)
+      } else {
+        throw new Error("PDF.js unavailable")
+      }
+    } catch (error) {
+      showNativePreview(source, "PDF.js không tải được, chuyển sang PDFObject/native viewer.")
+    }
+  }
+
+  const closeModal = () => {
+    modal.classList.remove("is-open")
+    modal.setAttribute("aria-hidden", "true")
+    document.body.classList.remove("pdf-modal-open")
+    pdfDocument = null
+    nativeMode = false
+    if (nativeViewer) {
+      nativeViewer.innerHTML = ""
+      nativeViewer.classList.remove("is-visible")
+    }
+    canvas.classList.remove("is-hidden")
+    context.clearRect(0, 0, canvas.width, canvas.height)
+  }
+
+  openButtons.forEach((button) => {
+    button.addEventListener("click", () => openModal(button.dataset.pdf, button.dataset.title))
+    button.addEventListener("mouseenter", () => {
+      if (!window.pdfjsLib || !button.dataset.pdf || pdfCache.has(button.dataset.pdf)) return
+      pdfCache.set(button.dataset.pdf, window.pdfjsLib.getDocument({ url: button.dataset.pdf, disableStream: false, disableAutoFetch: false }).promise)
+    }, { once: true })
+  })
+
+  modal.querySelectorAll("[data-pdf-close]").forEach((button) => {
+    button.addEventListener("click", closeModal)
+  })
+
+  if (prevButton) {
+    prevButton.addEventListener("click", () => {
+      if (pageNumber <= 1) return
+      pageNumber -= 1
+      renderPage(pageNumber)
+    })
+  }
+
+  if (nextButton) {
+    nextButton.addEventListener("click", () => {
+      if (!pdfDocument || pageNumber >= pdfDocument.numPages) return
+      pageNumber += 1
+      renderPage(pageNumber)
+    })
+  }
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && modal.classList.contains("is-open")) closeModal()
+  })
+})
