@@ -316,9 +316,27 @@ header .container {
 }
 
 .intro-text {
+  margin-bottom: 16px;
+  font-size: 1.05rem;
+  line-height: 1.78;
+  color: rgba(23, 33, 47, 0.72);
+  border-left: 3px solid var(--primary-color);
+  padding-left: 18px;
+  margin-top: 8px;
+  text-align: justify;
+}
+
+.intro-text:first-of-type::first-letter {
+  font-size: 2.6rem;
+  font-weight: 700;
+  float: left;
+  line-height: 1;
+  margin-right: 6px;
+  color: var(--primary-color);
+}
+
+.intro-text:last-of-type {
   margin-bottom: 30px;
-  font-size: 1.1rem;
-  line-height: 1.7;
 }
 
 .info-column {
@@ -2059,8 +2077,7 @@ header .container {
 }
 
 .intro-text {
-  max-width: 56ch;
-  color: rgba(23, 33, 47, 0.76);
+  max-width: 58ch;
   font-size: 1.04rem;
 }
 
